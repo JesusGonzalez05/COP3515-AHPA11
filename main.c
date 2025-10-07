@@ -20,7 +20,11 @@ int main (){
         ptr++;
     }
 
-
+    printf("Print entire updated array (locations 0-9):\n");
+    for (ptr = startPtr; ptr < endPtr; ptr++) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
 
 
     // Step 3: Add two additional scores (using pointers only)
