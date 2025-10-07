@@ -38,6 +38,8 @@ int main (){
     1) If you had sized the finalExams array based on your class size (5), 
        what just happened when you added scores for two additional students?
 
+       buffer overflow, this can cause crashes and even allow hackers in.
+
     2) If you executed: testPtr = startPtr - endPtr and then tried to store 
        the value "5" in location testPtr, what would happen?
 
