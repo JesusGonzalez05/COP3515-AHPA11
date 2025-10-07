@@ -13,6 +13,12 @@ int main (){
     printf("\n");
 
     // Step 2: Update first 5 elements using only pointers
+    int scores1[5] = {90, 82, 65, 79, 67};
+    ptr = startPtr;
+    for (int i = 0; i < 5; i++) {
+        *ptr = scores1[i];
+        ptr++;
+    }
 
 
 
