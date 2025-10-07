@@ -29,6 +29,16 @@ int main (){
 
     // Step 3: Add two additional scores (using pointers only)
 
+    printf("Adding new scores to the array...\n");
+    *ptr++ = 81;
+    *ptr++ = 72;
+
+    printf("Print entire array (locations 0-9):\n");
+    for (ptr = startPtr; ptr < endPtr; ptr++) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
+    
     // Step 4: Boost any score between 60–69 to 70
 
         /*
