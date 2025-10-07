@@ -6,7 +6,11 @@ int main (){
     int *endPtr = finalExams + 10;   // Points to one past the end of array
     int *ptr;  
 
-
+    printf("Print entire array before modification (locations 0-9):\n");
+    for (ptr = startPtr; ptr < endPtr; ptr++) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
 
     // Step 2: Update first 5 elements using only pointers
 
@@ -18,7 +22,7 @@ int main (){
     // Step 4: Boost any score between 60–69 to 70
 
         /*
-        
+
     QUESTIONS
 
     1) If you had sized the finalExams array based on your class size (5), 
