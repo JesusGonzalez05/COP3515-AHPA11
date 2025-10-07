@@ -38,7 +38,7 @@ int main (){
         printf("%d ", *ptr);
     }
     printf("\n");
-    
+
     // Step 4: Boost any score between 60–69 to 70
 
         /*
@@ -52,6 +52,8 @@ int main (){
 
     2) If you executed: testPtr = startPtr - endPtr and then tried to store 
        the value "5" in location testPtr, what would happen?
+
+       it would point to an invalid memory location and undefined behavior. 
 
     */
 
