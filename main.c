@@ -1,46 +1,58 @@
 #include <stdio.h>
 
-int main (){
-    int finalExams[10] = {0};        // Step 1: Create and initialize array of size 10
-    int *startPtr = finalExams;      // Points to start of array
-    int *endPtr = finalExams + 10;   // Points to one past the end of array
-    int *ptr;  
+int main(void) {
+    int finalExams[10] = {0};
+    int *startPtr = &finalExams[0];
+    int *endPtr = &finalExams[9];
+    int *ptr;
 
     printf("Print entire array before modification (locations 0-9):\n");
-    for (ptr = startPtr; ptr < endPtr; ptr++) {
-        printf("%d ", *ptr);
+    for (ptr = startPtr; ptr <= endPtr; ptr++) {
+        printf(" %d ", *ptr);
     }
     printf("\n");
 
-    // Step 2: Update first 5 elements using only pointers
-    int scores1[5] = {90, 82, 65, 79, 67};
+    printf("Load the contents of the finalExams array...\n");
+
+    // Load first 5 scores using pointers
+    int scores[5] = {90, 82, 65, 79, 67};
     ptr = startPtr;
     for (int i = 0; i < 5; i++) {
-        *ptr = scores1[i];
+        *ptr = scores[i];
         ptr++;
     }
 
     printf("Print entire updated array (locations 0-9):\n");
-    for (ptr = startPtr; ptr < endPtr; ptr++) {
+    for (ptr = startPtr; ptr <= endPtr; ptr++) {
         printf("%d ", *ptr);
     }
     printf("\n");
 
-
-    // Step 3: Add two additional scores (using pointers only)
-
     printf("Adding new scores to the array...\n");
+
+    // Add two new scores using pointers
+    ptr = startPtr + 5;
     *ptr++ = 81;
     *ptr++ = 72;
 
     printf("Print entire array (locations 0-9):\n");
-    for (ptr = startPtr; ptr < endPtr; ptr++) {
+    for (ptr = startPtr; ptr <= endPtr; ptr++) {
         printf("%d ", *ptr);
     }
     printf("\n");
 
-    // Step 4: Boost any score between 60–69 to 70
+    // Boost D scores (60–69) to 70
+    for (ptr = startPtr; ptr <= endPtr; ptr++) {
+        if (*ptr >= 60 && *ptr <= 69) {
+            *ptr = 70;
+        }
+    }
 
+    printf("Print entire array after boosting D scores to C (locations 0-9):\n");
+    for (ptr = startPtr; ptr <= endPtr; ptr++) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
         /*
 
     QUESTIONS
